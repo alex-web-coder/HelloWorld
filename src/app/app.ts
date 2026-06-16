@@ -5,8 +5,12 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Helloworld');
+  protected title = 'Helloworld';
+
+  protected changeTitle(event: MouseEvent): void {
+    this.title = 'Mouse click coordinates were: ' + event.clientX + ', ' + event.clientY;
+  }
 }
