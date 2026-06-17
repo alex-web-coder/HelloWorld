@@ -1,7 +1,8 @@
 <footer [ngClass]="username ? 'footer' : ''">
+    <h2>Footer</h2>
     <p *ngIf="username != ''">Hello, {{ username }}!</p>
     <input [(ngModel)]="username" placeholder="Enter name"><span><small>(binding to username is done by ngModel from FormsModule)</small></span>
     <p [ngStyle]="{ 'color': username ? 'green' : 'red' }">username {{ username ? 'is' : 'is not' }} entered</p>
     <button (click)="onFooterClick($event)">Click Footer</button>
-    
+
 </footer>
