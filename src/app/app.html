@@ -1,5 +1,18 @@
+
+<app-header [title]="title" [bookname]="getBookName()"></app-header>
+
+
 <div>
-  <h1>Text from ts-code: {{ title }}</h1>
+  <h1
+    (click)="showAlert()"
+    (mouseover)="isMouseOver = true"
+    (mouseleave)="isMouseOver = false"
+    [style.color]="isMouseOver ? 'blue' : 'white'"
+    >
+    Text from ts-code: {{ title }}
+  </h1>
   <p>Welcome to our application.</p>
   <button (click)="changeTitle($event)">Change Title</button>
 </div>
+
+<app-footer (footerClicked)="handleFooterClick($event)"></app-footer>
