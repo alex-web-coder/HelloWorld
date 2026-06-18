@@ -1,0 +1,27 @@
+<div>
+  <h1
+    (click)="showAlert()"
+    (mouseover)="isMouseOver = true"
+    (mouseleave)="isMouseOver = false"
+    [style.color]="isMouseOver ? 'blue' : 'black'"
+    >
+    Text from ts-code: {{ title }}
+  </h1>
+  <button (click)="changeTitle($event)">Change Title</button>
+</div>
+
+<h2>Notes</h2>
+<ul>
+  <li *ngFor="let note of notes()">
+    <strong>{{ note.title }}</strong>
+    {{ note.content }}
+    <small>{{ note.createdAt | date:'short' }}</small>
+  </li>
+</ul>
+
+<h2>Add Note</h2>
+<input [(ngModel)]="newNote().title" placeholder="Note Title">
+<br>
+<textarea [(ngModel)]="newNote().content" placeholder="Note Content"></textarea>
+<br>
+<button (click)="addNote()">Add Note</button>
