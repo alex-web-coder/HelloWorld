@@ -10,13 +10,15 @@ export class NoteService {
       id: 1,
       title: 'First Note',
       content: 'This is the content of the first note.',
-      createdAt: new Date('2024-01-01T10:00:00')
+      createdAt: new Date('2024-01-01T10:00:00'),
+      price: 13.37
     },
     {
       id: 2,
       title: 'Second Note',
       content: 'This is the content of the second note.',
-      createdAt: new Date('2024-02-01T11:00:00')
+      createdAt: new Date('2024-02-01T11:00:00'),
+      price: 13.37
     }
   ])
 
@@ -29,7 +31,8 @@ export class NoteService {
         id: this.notes().length + 1,
         title: title,
         content: content,
-        createdAt: new Date()
+        createdAt: new Date(),
+        price: 13.37
       };
       this.notes.update(notes => [...notes, newNote]);
   }

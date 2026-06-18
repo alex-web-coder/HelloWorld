@@ -1,6 +1,8 @@
 <h2>{{ note?.title }}</h2>
 <p>{{ note?.content }}</p>
 <em>{{ note?.createdAt | date }}</em>
+<br>
+<em>{{ note?.price | currency: 'EUR' }}</em>
 
 @if (!note) {
   <p>Note {{ noteId }} not found.</p>

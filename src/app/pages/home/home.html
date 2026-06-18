@@ -13,9 +13,10 @@
 <h2>Notes</h2>
 <ul>
   <li *ngFor="let note of notes()">
-    <a [routerLink]="['/note', note.id]">{{ note.title }}</a>
-    {{ note.content }}
+    <a [routerLink]="['/note', note.id]">{{ note.title | uppercase }}</a>
+    {{ note.content | noteShortener: 10 }}
     <small>{{ note.createdAt | date:'short' }}</small>
+    <small>, {{ note.price | currency: 'EUR' }}</small>
   </li>
 </ul>
 

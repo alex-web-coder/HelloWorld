@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NoteAdd } from '../../components/note-add/note-add';
+import { NoteShortenerPipe } from '../../pipes/note-shortener-pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule, RouterLink, NoteAdd],
+  imports: [FormsModule, CommonModule, RouterLink, NoteAdd, NoteShortenerPipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
