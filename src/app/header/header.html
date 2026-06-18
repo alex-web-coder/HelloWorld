@@ -2,8 +2,8 @@
     <h2>Angular Website</h2>
     <p>Getting data from app: {{ bookname }}</p>
     <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <a [routerLink]="['/']">Home</a>
+        <a [routerLink]="['/about']">About</a>
     </nav>
 </header>
 
