@@ -3,10 +3,11 @@ import { Note } from '../../models/note.model';
 import { NoteService } from '../../services/note';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
