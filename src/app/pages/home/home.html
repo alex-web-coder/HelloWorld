@@ -19,9 +19,4 @@
   </li>
 </ul>
 
-<h2>Add Note</h2>
-<input [(ngModel)]="newNote().title" placeholder="Note Title">
-<br>
-<textarea [(ngModel)]="newNote().content" placeholder="Note Content"></textarea>
-<br>
-<button (click)="addNote()">Add Note</button>
+<app-note-add></app-note-add>

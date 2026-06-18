@@ -1,0 +1,38 @@
+<h2>Add Note</h2>
+
+<form #noteForm="ngForm" (ngSubmit)="addNote(noteForm)">
+    <div>
+        <input type="text"
+            name="title"
+            [(ngModel)]="newNote().title"
+            required
+            minlength="3"
+            maxlength="50"
+            #titleRef="ngModel"
+            placeholder="Note Title"
+            />
+        <div *ngIf="submitted && titleRef.invalid" style="color: red;">
+            <div *ngIf="titleRef.errors?.['required']">Title is required.</div>
+            <div *ngIf="titleRef.errors?.['minlength']">Title must be at least 3 characters long.</div>
+            <div *ngIf="titleRef.errors?.['maxlength']">Title must be at most 50 characters long.</div>
+        </div>
+    </div>
+
+    <div>
+        <textarea
+            name="content"
+            [(ngModel)]="newNote().content"
+            required
+            minlength="5"
+            #contentRef="ngModel"
+            placeholder="Note Content"
+        ></textarea>
+        <div *ngIf="submitted && contentRef.invalid" style="color: red;">
+            <div *ngIf="contentRef.errors?.['required']">Content is required.</div>
+            <div *ngIf="contentRef.errors?.['minlength']">Content must be at least 5 characters long.</div>
+        </div>
+    </div>
+    <button type="submit">Add Note</button>
+   
+
+</form>
